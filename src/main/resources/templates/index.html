@@ -16,7 +16,9 @@
 			<h1 th:utext="${titulo}"></h1>
 			<div align="center">
 				<form th:action="@{/biblioteca}" method="get">
-					<button class="btn btn-md btn-primary btn-block" type="Submit">Biblioteca</button>
+					<button class="btn btn-md btn-primary btn-block" type="Submit">
+						<span class="glyphicon glyphicon-book" aria-hidden="true"></span> Biblioteca
+					</button>
 				</form>
 			</div>
 		</div>

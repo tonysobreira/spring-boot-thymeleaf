@@ -14,7 +14,7 @@ import javax.validation.constraints.NotNull;
 public class Livro {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Integer id;
 
@@ -27,12 +27,25 @@ public class Livro {
 	private String editora;
 
 	@Column(name = "edicao")
-	@NotNull(message = "*digite a edicao")
+	@NotNull(message = "*digite a edição")
 	private Integer edicao;
 
 	@Column(name = "area")
 	@NotEmpty(message = "*digite a area")
 	private String area;
+
+	public Livro() {
+	}
+
+	public Livro(Integer id, @NotEmpty(message = "*digite o nome") String nome,
+			@NotEmpty(message = "*digite a editora") String editora,
+			@NotNull(message = "*digite a edicao") Integer edicao, @NotEmpty(message = "*digite a area") String area) {
+		this.id = id;
+		this.nome = nome;
+		this.editora = editora;
+		this.edicao = edicao;
+		this.area = area;
+	}
 
 	public Integer getId() {
 		return id;

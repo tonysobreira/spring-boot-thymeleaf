@@ -18,8 +18,12 @@
 	            <form autocomplete="off" action="#" th:action="@{/adicionarEditarLivro}"
 	                  th:object="${livro}" method="post" class="form-horizontal"
 	                  role="form">
-	                <a class="btn btn-sm btn-default" th:href="@{/}">Voltar</a>
-        	        <a class="btn btn-sm btn-default" th:href="@{/biblioteca}">Resetar</a>
+	                <a class="btn btn-sm btn-default" th:href="@{/}">
+	                	<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Voltar
+	                </a>
+        	        <a class="btn btn-sm btn-default" th:href="@{/biblioteca}">
+        	        	<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Resetar
+        	        </a>
 	                <h1 th:utext="${titulo}"></h1>
 		            <h2 th:utext="${operacao}"></h2>
 							 
@@ -85,9 +89,11 @@
 	    <div class="col-md-6 col-md-offset-3 panel panel-default">
 	    
 			<div class="panel-heading">
-				<strong>Livros</strong>
+				<strong><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Livros</strong>
 				<div class="btn-group pull-right" >
-					<a class="btn btn-sm btn-warning" th:href="@{/listarPorEditora}">Listar por Editora</a>
+					<a class="btn btn-sm btn-warning" th:href="@{/listarPorEditora}">
+						<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Listar por Editora
+					</a>
 				</div>
 			</div>
 			
@@ -114,12 +120,16 @@
 								<td th:text="${livro.area}"></td>
 								<td>
 									<div class="btn-group">
-								   		<a class="btn btn-sm btn-danger" th:href="@{/removerLivro/{id}(id=${livro.id})}">Remover</a>
+								   		<a class="btn btn-sm btn-danger" th:href="@{/removerLivro/{id}(id=${livro.id})}">
+								   			<span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Remover
+								   		</a>
 								   </div>
 								</td>
 								<td>
 									<div class="btn-group">
-								   		<a class="btn btn-sm btn-info" th:href="@{/editarLivro/{id}(id=${livro.id})}">Editar</a>
+								   		<a class="btn btn-sm btn-info" th:href="@{/editarLivro/{id}(id=${livro.id})}">
+								   			<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar
+								   		</a>
 								   </div>
 								</td>
 							</tr>
