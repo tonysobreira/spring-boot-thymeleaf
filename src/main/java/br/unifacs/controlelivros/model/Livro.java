@@ -9,6 +9,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import br.unifacs.controlelivros.dto.LivroDTO;
+
 @Entity
 @Table(name = "tb_livro")
 public class Livro {
@@ -56,6 +58,16 @@ public class Livro {
 		this.area = area;
 		this.autor = autor;
 		this.isbn = isbn;
+	}
+
+	public Livro(LivroDTO livroDTO) {
+		id = livroDTO != null && livroDTO.getId() != null ? livroDTO.getId() : null;
+		nome = livroDTO != null && livroDTO.getNome() != null ? livroDTO.getNome() : null;
+		editora = livroDTO != null && livroDTO.getEditora() != null ? livroDTO.getEditora() : null;
+		edicao = livroDTO != null && livroDTO.getEdicao() != null ? livroDTO.getEdicao() : null;
+		area = livroDTO != null && livroDTO.getArea() != null ? livroDTO.getArea() : null;
+		autor = livroDTO != null && livroDTO.getAutor() != null ? livroDTO.getAutor() : null;
+		isbn = livroDTO != null && livroDTO.getIsbn() != null ? livroDTO.getIsbn() : null;
 	}
 
 	public Integer getId() {

@@ -2,20 +2,20 @@ package br.unifacs.controlelivros.service;
 
 import java.util.List;
 
-import br.unifacs.controlelivros.model.Livro;
+import br.unifacs.controlelivros.dto.LivroDTO;
 
 public interface BibliotecaService {
 
-	void adicionarLivro(Livro livro);
+	void adicionarLivro(LivroDTO livro);
 
-	List<Livro> listarTodos();
+	List<LivroDTO> listarTodos();
 
-	void removerLivro(Livro livro);
+	void removerLivro(LivroDTO livro);
 
-	Livro buscarLivro(Integer id);
+	LivroDTO buscarLivro(Integer id);
 	
-	Livro buscarLivroPorNome(String nome);
+	LivroDTO buscarLivroPorNome(String nome);
 
-	List<Livro> listarTodosOrdenarEditora();
+	List<LivroDTO> listarTodosOrdenarEditora();
 
 }

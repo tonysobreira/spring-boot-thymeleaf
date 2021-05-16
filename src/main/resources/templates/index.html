@@ -1,28 +1,43 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:th="http://www.thymeleaf.org">
+	xmlns:th="http://www.thymeleaf.org">
 
-<head>
+<head lang="pt_BR">
 <title>Controle de Livros</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+	crossorigin="anonymous">
 </head>
 
 <body>
 
-	<div class="container">
-		<div class="jumbotron" align="center" style="margin-top: 50px;">
-			<h1 th:utext="${titulo}"></h1>
-			<div align="center">
-				<form th:action="@{/biblioteca}" method="get">
-					<button class="btn btn-md btn-primary btn-block" type="Submit">
-						<span class="glyphicon glyphicon-book" aria-hidden="true"></span> Biblioteca
-					</button>
-				</form>
-			</div>
+	<div class="p-5 mb-4 bg-light rounded-3 text-center">
+		<div class="container-fluid py-5">
+			<h1 class="display-5 fw-bold" th:utext="${titulo}"></h1>
+			<form th:action="@{/biblioteca}" method="get">
+				<button class="btn btn-md btn-primary btn-block" type="Submit">
+					<i class="fas fa-book"></i> Biblioteca
+				</button>
+			</form>
 		</div>
 	</div>
 
+	<!-- Option 1: Bootstrap Bundle with Popper -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+		crossorigin="anonymous"></script>
+
+	<script src="https://kit.fontawesome.com/a1d899baa5.js"
+		crossorigin="anonymous"></script>
 </body>
 </html>
