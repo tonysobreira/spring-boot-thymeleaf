@@ -51,7 +51,7 @@ public class LivroDTO implements Serializable {
 		id = livro != null && livro.getId() != null ? livro.getId() : null;
 		nome = livro != null && livro.getNome() != null ? livro.getNome() : null;
 		editora = livro != null && livro.getEditora() != null ? livro.getEditora() : null;
-		edicao = livro != null && livro.getEdicao() != null ? livro.getEdicao() : null;
+		edicao = livro != null && livro.getEdicao() != null ? livro.getEdicao() : 1;
 		area = livro != null && livro.getArea() != null ? livro.getArea() : null;
 		autor = livro != null && livro.getAutor() != null ? livro.getAutor() : null;
 		isbn = livro != null && livro.getIsbn() != null ? livro.getIsbn() : null;

@@ -64,7 +64,7 @@ public class Livro {
 		id = livroDTO != null && livroDTO.getId() != null ? livroDTO.getId() : null;
 		nome = livroDTO != null && livroDTO.getNome() != null ? livroDTO.getNome() : null;
 		editora = livroDTO != null && livroDTO.getEditora() != null ? livroDTO.getEditora() : null;
-		edicao = livroDTO != null && livroDTO.getEdicao() != null ? livroDTO.getEdicao() : null;
+		edicao = livroDTO != null && livroDTO.getEdicao() != null ? livroDTO.getEdicao() : 1;
 		area = livroDTO != null && livroDTO.getArea() != null ? livroDTO.getArea() : null;
 		autor = livroDTO != null && livroDTO.getAutor() != null ? livroDTO.getAutor() : null;
 		isbn = livroDTO != null && livroDTO.getIsbn() != null ? livroDTO.getIsbn() : null;
