@@ -10,7 +10,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "livro")
+@Table(name = "tb_livro")
 public class Livro {
 
 	@Id
@@ -31,20 +31,31 @@ public class Livro {
 	private Integer edicao;
 
 	@Column(name = "area")
-	@NotEmpty(message = "*digite a area")
+	@NotEmpty(message = "*digite a área")
 	private String area;
+
+	@Column(name = "autor")
+	@NotEmpty(message = "*digite o autor")
+	private String autor;
+
+	@Column(name = "isbn")
+	@NotEmpty(message = "*digite o isbn")
+	private String isbn;
 
 	public Livro() {
 	}
 
 	public Livro(Integer id, @NotEmpty(message = "*digite o nome") String nome,
 			@NotEmpty(message = "*digite a editora") String editora,
-			@NotNull(message = "*digite a edicao") Integer edicao, @NotEmpty(message = "*digite a area") String area) {
+			@NotNull(message = "*digite a edição") Integer edicao, @NotEmpty(message = "*digite a área") String area,
+			@NotEmpty(message = "*digite o autor") String autor, @NotEmpty(message = "*digite o isbn") String isbn) {
 		this.id = id;
 		this.nome = nome;
 		this.editora = editora;
 		this.edicao = edicao;
 		this.area = area;
+		this.autor = autor;
+		this.isbn = isbn;
 	}
 
 	public Integer getId() {
@@ -85,6 +96,22 @@ public class Livro {
 
 	public void setArea(String area) {
 		this.area = area;
+	}
+
+	public String getAutor() {
+		return autor;
+	}
+
+	public void setAutor(String autor) {
+		this.autor = autor;
+	}
+
+	public String getIsbn() {
+		return isbn;
+	}
+
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
 	}
 
 }

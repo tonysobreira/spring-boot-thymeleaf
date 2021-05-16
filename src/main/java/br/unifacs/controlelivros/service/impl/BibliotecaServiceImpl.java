@@ -1,6 +1,7 @@
 package br.unifacs.controlelivros.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,7 +33,13 @@ public class BibliotecaServiceImpl implements BibliotecaService {
 
 	@Override
 	public Livro buscarLivro(Integer id) {
-		return bibliotecaRepository.findById(id).get();
+		Optional<Livro> optionalLivro = bibliotecaRepository.findById(id);
+
+		if (optionalLivro.isPresent()) {
+			return optionalLivro.get();
+		}
+
+		return null;
 	}
 
 	@Override

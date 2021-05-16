@@ -38,7 +38,7 @@ public class BibliotecaController {
 
 		modelAndView.setViewName("biblioteca");
 		modelAndView.addObject("titulo", "Biblioteca");
-		modelAndView.addObject("operacao", "Adicionar Livro");
+		modelAndView.addObject("operacao", "Adicionar Livro ");
 		modelAndView.addObject("livros", bibliotecaService.listarTodos());
 		modelAndView.addObject("livrosCadastrados", "Livros cadastrados: " + bibliotecaService.listarTodos().size());
 		modelAndView.addObject("livro", new Livro());
@@ -59,15 +59,15 @@ public class BibliotecaController {
 			modelAndView.addObject("livrosCadastrados", "Livros cadastrados: " + bibliotecaService.listarTodos().size());
 			
 			if (isAdicionar) {
-				modelAndView.addObject("operacao", "Adicionar Livro");
+				modelAndView.addObject("operacao", "Adicionar Livro ");
 			} else {
-				modelAndView.addObject("operacao", "Editar Livro");
+				modelAndView.addObject("operacao", "Editar Livro ");
 			}
 			
 			return modelAndView;
 		}
 		
-		modelAndView.addObject("operacao", "Adicionar Livro");
+		modelAndView.addObject("operacao", "Adicionar Livro ");
 		
 		if (isAdicionar) {
 			
@@ -90,7 +90,7 @@ public class BibliotecaController {
 			if (existeLivro != null && !existeLivro.getId().equals(livro.getId())) {
 				modelAndView.setViewName("biblioteca");
 				modelAndView.addObject("mensagem", "Já existe um livro com esse nome!");
-				modelAndView.addObject("operacao", "Editar Livro");
+				modelAndView.addObject("operacao", "Editar Livro ");
 			} else {
 				bibliotecaService.adicionarLivro(livro);
 				modelAndView.addObject("mensagem", "Livro editado com sucesso!");
@@ -109,7 +109,7 @@ public class BibliotecaController {
 	public ModelAndView removerLivro(@PathVariable("id") Integer id) {
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("titulo", "Biblioteca");
-		modelAndView.addObject("operacao", "Adicionar Livro");
+		modelAndView.addObject("operacao", "Adicionar Livro ");
 
 		Livro livro = null;
 
@@ -137,7 +137,7 @@ public class BibliotecaController {
 	public ModelAndView editarLivro(@PathVariable("id") Integer id) {
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("titulo", "Biblioteca");
-		modelAndView.addObject("operacao", "Editar Livro");
+		modelAndView.addObject("operacao", "Editar Livro ");
 
 		Livro livro = null;
 
@@ -164,7 +164,7 @@ public class BibliotecaController {
 	public ModelAndView listarPorEditora() {
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("titulo", "Biblioteca");
-		modelAndView.addObject("operacao", "Adicionar Livro");
+		modelAndView.addObject("operacao", "Adicionar Livro ");
 
 		modelAndView.setViewName("biblioteca");
 		modelAndView.addObject("livro", new Livro());

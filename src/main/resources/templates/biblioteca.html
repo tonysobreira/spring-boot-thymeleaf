@@ -14,7 +14,7 @@
 	<div class="container-fluid">
 	
 	    <div class="row">
-	        <div class="col-md-6 col-md-offset-3">
+	        <div class="col-md-12 col-md-offset-1">
 	            <form autocomplete="off" action="#" th:action="@{/adicionarEditarLivro}"
 	                  th:object="${livro}" method="post" class="form-horizontal"
 	                  role="form">
@@ -72,10 +72,33 @@
 	                        </div>
 	                    </div>
 	                </div>
+	                
+	                <div class="form-group">
+	                    <div class="col-sm-9">
+	                    	<label for="nome" class="col-sm-2 control-label">Autor</label>
+	                    	<div class="col-sm-10">
+	                        	<input id="area" type="text" th:field="*{autor}" placeholder="Autor" class="form-control"/>
+	                        	<label th:if="${#fields.hasErrors('autor')}" th:errors="*{autor}" class="text-danger"></label>
+	                        </div>
+	                    </div>
+	                </div>
+	                
+	                <div class="form-group">
+	                    <div class="col-sm-9">
+	                    	<label for="nome" class="col-sm-2 control-label">ISBN</label>
+	                    	<div class="col-sm-10">
+	                        	<input id="area" type="text" th:field="*{isbn}" placeholder="ISBN" class="form-control"/>
+	                        	<label th:if="${#fields.hasErrors('isbn')}" th:errors="*{isbn}" class="text-danger"></label>
+	                        </div>
+	                    </div>
+	                </div>
 	
 	                <div class="form-group">
 	                    <div class="col-sm-9">
-	                        <button type="submit" class="btn btn-primary btn-block" th:utext="${operacao}"></button>
+	                        <button type="submit" class="btn btn-primary btn-block">
+	                        	<span th:if="${operacao == 'Adicionar Livro'}" class="glyphicon glyphicon-floppy-disk" aria-hidden="true" th:utext="${operacao}"></span>
+	                        	<span th:unless="${operacao == 'Adicionar Livro'}" class="glyphicon glyphicon-pencil" aria-hidden="true" th:utext="${operacao}"></span>
+	                        </button>
 	                    </div>
 	                </div>
 	
@@ -86,7 +109,8 @@
 	        
 	    </div>
 
-	    <div class="col-md-6 col-md-offset-3 panel panel-default">
+		<div class="row">
+	    <div class="col-md-12 panel panel-default">
 	    
 			<div class="panel-heading">
 				<strong><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Livros</strong>
@@ -107,6 +131,8 @@
 								<th>Editora</th>
 								<th>Edição</th>
 								<th>Área</th>
+								<th>Autor</th>
+								<th>ISBN</th>
 								<th>Remover</th>
 								<th>Editar</th>
 							</tr>
@@ -118,6 +144,8 @@
 								<td th:text="${livro.editora}"></td>
 								<td th:text="${livro.edicao}"></td>
 								<td th:text="${livro.area}"></td>
+								<td th:text="${livro.autor}"></td>
+								<td th:text="${livro.isbn}"></td>
 								<td>
 									<div class="btn-group">
 								   		<a class="btn btn-sm btn-danger" th:href="@{/removerLivro/{id}(id=${livro.id})}">
@@ -142,6 +170,7 @@
 				<p th:utext="${livrosCadastrados}"></p>
 			</div>
 			
+		</div>
 		</div>
 	    
 	</div>
